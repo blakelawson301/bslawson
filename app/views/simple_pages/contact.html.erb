@@ -1,0 +1,32 @@
+<div class="contact-content">
+  <h1>Contact Blake</h1>
+
+  <!-- Contact Grid -->
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="col-lg-6 col-sm-12">
+        <div class="centermail">
+          <p class="contact-text">I would love to hear from you!</p>
+        </div><!-- end adress, email -->
+      </div>
+
+      <%= flash[:notice] %>
+      <%= form_with(url:"/simple_pages/thank_you", method: "post", local: true) do |form| %>
+          <div class="form-group">
+            <%= form.label :name, class:"contact-label" %>
+            <%= form.text_field :name, class: "form-control", placeholder: "Enter Name" %>
+          </div><!-- end form-group Name-->
+          <div class="form-group">
+            <%= form.label :email, class:"contact-label" %>
+            <%= form.text_field :email, id:"Email", class: "form-control email-box", placeholder: "Enter Email" %>
+          </div><!-- end form-group Email-->
+          <div class="form-group">
+            <%= form.label :message, class:"contact-label" %>
+            <%= form.text_area :message, class: "form-control message-box", placeholder: "Enter Message", rows: 5, cols:40 %>
+          </div>
+          <%= form.submit "Send", id:"contact-button", class: "form_label btn btn-light message-butto" %>
+          <% end %>
+        </div>
+  <%= image_tag("map.jpg", class: "img-fluid map-img") %>
+</div>
